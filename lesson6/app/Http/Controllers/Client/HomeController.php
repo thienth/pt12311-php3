@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Http\Controllers\Client;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Post;
+
+class HomeController extends Controller
+{
+    public function index(Request $rq){
+
+    	$keyword = $rq->keyword;
+    	$posts = Post::where('title', 'like', "%$keyword%")
+    					->paginate(10);
+		$posts->withPath("?keyword=$keyword");
+    	return view('welcome', compact('posts'));
+    }
+
+    public function removePost($id){
+    	$model = Post::find($id);
+    	if($model != null){
+    		$model->delete();
+    	}
+    	return redirect()->back();
+    }
+}
