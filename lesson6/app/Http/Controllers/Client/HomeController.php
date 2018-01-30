@@ -24,4 +24,10 @@ class HomeController extends Controller
     	}
     	return redirect()->back();
     }
+
+    public function add(){
+        $model = new Post();
+
+        return view('post.form', ['model' => $model]);
+    }
 }

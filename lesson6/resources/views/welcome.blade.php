@@ -9,7 +9,9 @@
 			<tr>
 				<th>Post ID</th>
 				<th>Post Title</th>
-				<th></th>
+				<th>
+					<a href="{{ route('post.add') }}" class="btn btn-success" title="">Add new</a>
+				</th>
 			</tr>
 		</thead>
 		<tbody>

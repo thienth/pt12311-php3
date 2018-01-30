@@ -14,3 +14,5 @@
 Route::get('/', "Client\HomeController@index")->name('homepage');
 Route::get('post/remove/{id}', "Client\HomeController@removePost")->name('post.remove');
 
+Route::get('post/add', "Client\HomeController@add")->name('post.add');
+
