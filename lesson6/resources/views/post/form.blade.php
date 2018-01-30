@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('title', 'Create new post')
 @section('content')
-	<form action="" method="post">
+	<form action="" method="post" class="col-md-6 col-md-offset-3">
 		{{csrf_field()}}
 		<input type="hidden" name="id" value="{{$model->id}}">
 		<div class="form-group">

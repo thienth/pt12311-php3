@@ -30,4 +30,11 @@ class HomeController extends Controller
 
         return view('post.form', ['model' => $model]);
     }
+
+    public function update($id){
+        $model = Post::find($id);
+
+        if(!$model) return redirect()->route('homepage');
+        return view('post.form', ['model' => $model]);
+    }
 }

@@ -20,6 +20,7 @@
 				<td>{{$p->id}}</td>
 				<td>{{$p->title}}</td>
 				<td>
+					<a href="{{ route('post.update', ['id' => $p->id]) }}" class="btn btn-primary btn-sm">Update</a>
 					<a class="btn btn-sm btn-danger" href="{{ route('post.remove', ['id' => $p->id]) }}" title="">Remove</a>
 				</td>
 			</tr>
