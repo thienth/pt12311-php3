@@ -35,6 +35,21 @@ class HomeController extends Controller
         $model = Post::find($id);
 
         if(!$model) return redirect()->route('homepage');
+        
         return view('post.form', ['model' => $model]);
+    }
+
+    public function save(Request $rq){
+        if($rq->id){
+            $model = Post::find($rq->id);
+        }else{
+            $model = new Post();
+        }
+        
+        $model->fill($rq->all());
+        $model->save();
+
+        return redirect()->route('homepage');
+
     }
 }

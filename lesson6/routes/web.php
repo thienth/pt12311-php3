@@ -16,4 +16,5 @@ Route::get('post/remove/{id}', "Client\HomeController@removePost")->name('post.r
 
 Route::get('post/add', "Client\HomeController@add")->name('post.add');
 Route::get('post/update/{id}', "Client\HomeController@update")->name('post.update');
+Route::post('post/save', "Client\HomeController@save")->name('post.save');
 
