@@ -18,3 +18,13 @@ Route::get('post/add', "Client\HomeController@add")->name('post.add');
 Route::get('post/update/{id}', "Client\HomeController@update")->name('post.update');
 Route::post('post/save', "Client\HomeController@save")->name('post.save');
 
+Route::get('login', 'Auth\LoginController@login')->name('login');
+Route::post('login', 'Auth\LoginController@postLogin');
+
+
+
+
+
+
+
+
