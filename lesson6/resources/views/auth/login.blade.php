@@ -9,6 +9,9 @@
 <body>
 	<form action="{{ route('login') }}" method="post" >
 		{{csrf_field()}}
+		@if (session('errMsg') != "")
+			<p style="color: red;">{{session('errMsg')}}</p>
+		@endif
 		Email: <input type="text" name="email" value="" placeholder="">
 		<br>
 		Password: <input type="password" name="password" value="" placeholder="">

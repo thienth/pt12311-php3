@@ -45,8 +45,7 @@ class LoginController extends Controller
     public function postLogin(Request $rq){
         if (Auth::attempt(['email' => $rq->email, 'password' => $rq->password])) {
             // Authentication passed...
-            return Auth::user()->name;
-            // return redirect()->intended('dashboard');
+            return redirect()->route('homepage');
         }
         return redirect()->route('login')->with('errMsg', "Sai ten dang nhap/mat khau");
     }

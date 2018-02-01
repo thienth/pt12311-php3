@@ -1,5 +1,10 @@
 @extends('layouts.main')
 @section('content')
+
+	@auth
+		<h2>Hello, mr. {{Auth::user()->name}}</h2>
+	@endauth
+
 	<form action="" method="get">
 		<input type="text" name="keyword" value="">
 		<button type="submit">Search</button>
