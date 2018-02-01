@@ -43,11 +43,16 @@ class LoginController extends Controller
         return view('auth.login');
     }
     public function postLogin(Request $rq){
-        if (Auth::attempt(['email' => $rq->email, 'password' => $rq->password])) {
+        if (Auth::attempt(['email' => $rq->email, 'password' => $rq->password], $rq->remember)) {
             // Authentication passed...
             return redirect()->route('homepage');
         }
         return redirect()->route('login')->with('errMsg', "Sai ten dang nhap/mat khau");
+    }
+
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('homepage');
     }
 }
 

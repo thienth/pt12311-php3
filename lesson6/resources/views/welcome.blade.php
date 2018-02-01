@@ -3,6 +3,8 @@
 
 	@auth
 		<h2>Hello, mr. {{Auth::user()->name}}</h2>
+
+		<a href="{{ route('logout') }}" title="">Logout</a>
 	@endauth
 
 	<form action="" method="get">
