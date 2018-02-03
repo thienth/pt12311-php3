@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-
+	{{$supersayan}}
 	@auth
 		<h2>Hello, mr. {{Auth::user()->name}}</h2>
 

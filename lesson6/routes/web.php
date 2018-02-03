@@ -16,7 +16,9 @@ Route::get('/', "Client\HomeController@index")->name('homepage');
 Route::group(['middleware' => 'auth', 'prefix' => 'post'], function() {
     Route::get('remove/{id}', "Client\HomeController@removePost")->name('post.remove');
 
-	Route::get('add', "Client\HomeController@add")->name('post.add');
+	Route::get('add', "Client\HomeController@add")
+						->middleware(['author.role'])
+						->name('post.add');
 	Route::get('update/{id}', "Client\HomeController@update")->name('post.update');
 	Route::post('save', "Client\HomeController@save")->name('post.save');
 });
