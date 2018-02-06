@@ -28,7 +28,13 @@ Route::get('login', 'Auth\LoginController@login')->name('login');
 Route::post('login', 'Auth\LoginController@postLogin');
 Route::any('logout', 'Auth\LoginController@logout')->name('logout');
 
-
+Route::get('send-mail/{msg}', 'Client\HomeController@sendMail');
+use Carbon\Carbon;
+Route::get('random-token', function() {
+    $token = sha1(str_random(40) . uniqid());
+    $now = Carbon::now();
+    return $now;
+});
 
 
 
