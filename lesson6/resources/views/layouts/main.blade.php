@@ -10,5 +10,7 @@
 	<div class="container bg-success">
 		@yield('content')
 	</div>
+	<script type="text/javascript" src="{{ asset('plugins/tinymce/tinymce.min.js') }}"></script>
+	@yield('js')
 </body>
 </html>
