@@ -58,22 +58,14 @@ class HomeController extends Controller
         Mail::send('emails.test', ['msg' => $msg], function ($message) {
 
             // $message->from('john@johndoe.com', 'John Doe');
-            // $message->sender('john@johndoe.com', 'John Doe');
         
             $message->to([
                 'thienth@fpt.edu.vn', 
                 'minhtie998@gmail.com',
             ]);
-        
-            // $message->cc('john@johndoe.com', 'John Doe');
-            // $message->bcc('john@johndoe.com', 'John Doe');
-        
             $message->replyTo('haotv03@gmail.com', 'Hao hao');
-        
             $message->subject('Test send email laravel');
-        
             // $message->priority(3);
-        
             // $message->attach('pathToFile');
         });
 
